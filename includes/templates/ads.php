@@ -43,7 +43,7 @@
             </div>   
         </div>
         <div class="bottom-mid-row">
-            <span class="pick-text"><?php echo(isset($content) ? $content : 'here goes the title') ?></span>
+            <span class="pick-text"><?php if(isset($title)) echo $title; else if(isset($content)) echo $content; else echo 'Your title goes here';?></span>
             <br>
             <span class="bets-text">Hurry up! 25 people have placed this bet</span>
         </div>

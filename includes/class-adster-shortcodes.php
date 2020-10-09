@@ -15,6 +15,12 @@ class AdsterShortcodes {
         if(isset($args['id'])){
             $countdown = get_post_meta($args['id'], 'adster_countdown', true );
         }
+        if(isset($arg['title'])){
+            $title = $args['title'];
+        }
+        else if(isset($args['id'])){
+            $title = get_the_title($args['id']);
+        }
 		include(plugin_dir_path( __FILE__ ).'templates/ads.php');
 		$output = ob_get_contents();
 		ob_end_clean();

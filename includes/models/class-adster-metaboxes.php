@@ -25,6 +25,13 @@ class AdsterMetaboxes {
     }
 
     public function adster_register_meta_boxes() {
+        // add_meta_box(
+        //     'adster_preview',
+        //     'Ad preview',
+        //     array($this, 'get_adster_preview'),
+        //     'adster_custom_ad',
+        // ); 
+
         foreach ($this->metaboxes as $metabox) {
             if(isset($metabox['title'])){
                 add_meta_box(
@@ -43,30 +50,26 @@ class AdsterMetaboxes {
             'adster_countdown',
             'Ad countdown',
             array($this, 'get_adster_countdown'),
-            'adster_custom_ad'
+            'adster_custom_ad',
+            'advanced',
+            'high',
         );
         
         add_meta_box(
             'adster_shortcode',
             'Ad shortcode',
             array($this, 'get_adster_shortcode'),
-            'adster_custom_ad'
-        );
-
-        add_meta_box(
-            'adster_preview',
-            'Ad preview',
-            array($this, 'get_adster_preview'),
             'adster_custom_ad',
             'advanced',
             'high',
-            $metabox
-        );    
+        );
+
+           
     }
 
-    public function get_adster_preview($post){
-        include(plugin_dir_path( __FILE__ ).'../templates/ads.php');
-    }
+    // public function get_adster_preview($post){
+    //     include(plugin_dir_path( __FILE__ ).'../templates/ads.php');
+    // }
 
     public function get_adster_countdown($post){
         $value = get_post_meta( $post->ID, 'adster_countdown', true );
@@ -87,9 +90,16 @@ class AdsterMetaboxes {
     }
 
     public function get_adster_shortcode($post){
+        echo '<div class="wrap">';
+        echo '<p>Shortcode example with content </p>';
         echo '<p>';
-        echo '<strong>[adster_custom_ad id="'.$post->ID.'"]</strong>';
+        echo '<strong>[adster_custom_ad id="'.$post->ID.'"] Content example [/adster_custom_ad]</strong>';
         echo '</p>';
+        echo '<p>Shortcode example with title (overrides content) </p>';
+        echo '<p>';
+        echo '<strong>[adster_custom_ad id="'.$post->ID.'" title="'.get_the_title($post->ID).'"]</strong>';
+        echo '</p>';
+        echo '</div>';
     }
 
     public function adster_details_meta_box( $post, $metabox ) {
