@@ -12,7 +12,7 @@ class AdsterShortcodes {
     public function get_adster_template($args, $content){
         ob_start();
         $countdown = 0;
-        if($args['id']){
+        if(isset($args['id'])){
             $countdown = get_post_meta($args['id'], 'adster_countdown', true );
         }
 		include(plugin_dir_path( __FILE__ ).'templates/ads.php');

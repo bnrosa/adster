@@ -65,24 +65,23 @@ class AdsterMetaboxes {
     }
 
     public function get_adster_preview($post){
-        ?> <iframe src="" frameborder="0">
-            <?php include(plugin_dir_path( __FILE__ ).'../templates/ads.php'); ?>
-        </iframe>
-        <?php 
+        include(plugin_dir_path( __FILE__ ).'../templates/ads.php');
     }
 
     public function get_adster_countdown($post){
         $value = get_post_meta( $post->ID, 'adster_countdown', true );
-        wp_nonce_field( basename( __FILE__ ), 'adster-ads-details' ); 
-        $time = $value - strtotime('now');
+        wp_nonce_field( basename( __FILE__ ), 'adster-ads-details' );
+        if($value){
+            $time = $value - strtotime('now');
+        }
         ?>
         
         <div class="wrap">
             <p>Plese set the remaining time in <strong>HOURS</strong></p>
             <input type="text" value="<?php echo esc_attr( $value) ?>" name="adster_countdown">
 
-            <p>Expires at <?php echo date('Y-m-d H:i:s', $value);?>.</p>
-            <p>Expires within <?php echo $time > 0 ? date('h', $time) : 0;?> hours.</p>
+            <p>Expires at <?php if(isset($time)) echo date('Y-m-d H:i:s', $value);?>.</p>
+            <p>Expires within <?php if(isset($time)) echo $time > 0 ? date('h', $time) : 0;?> hours.</p>
         </div>
         <?php 
     }

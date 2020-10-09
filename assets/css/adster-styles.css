@@ -16,7 +16,7 @@
 /* Middle */
 .mid-col{
     width:50%;
-    padding: 1rem;
+    padding: 1vw;
     background-color: #000105;
     grid-auto-rows: 1fr;
     display: grid;
@@ -43,15 +43,15 @@
     line-height: 0.9;
 }
 .timer-letters{
-    font-size: 1rem;
+    font-size: 1.2vw;
 }
 .timer-numbers{
-    font-size: 2rem;
+    font-size: 3vw;
 }
 
 .scarcity-text{
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1.2vw;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -65,11 +65,11 @@
 }
 .pick-text{
     color: #FFEF16;  
-    font-size: 2rem;
+    font-size: 2vw;
     font-weight: bold; 
 }
 .bets-text{
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     font-weight: bold;
 }
 /* Right */
@@ -86,12 +86,12 @@
     background-image: linear-gradient(to top, #ff4208 0%, #FF8008 4%, #ffa908 100%, #feb517 100%);
     border-radius: 2px;
     padding: 1.5rem;
-    font-size: 1.4rem;
+    font-size: 1.4vw;
     font-weight: bold;
 }
 .trusted-text{
     line-height: 1;
-    font-size: 1.2rem;
+    font-size: 1.2vw;
     font-weight: bold;
     color: #fff;
     display: flex;
@@ -103,7 +103,14 @@
     text-decoration: none;
 
 }
-
+@media only screen and (min-width: 925px){
+    .timer-letters {
+        font-size: 1vw;
+    }
+    .timer-numbers{
+        font-size: 2vw;
+    }
+}
 @media only screen and (max-width: 640px){
     #row{
         flex-direction: row;
@@ -117,7 +124,10 @@
         width: 100%;
     }
     .timer-letters {
-        font-size: 0.9rem;
+        font-size: 2vw;
+    }
+    .timer-numbers {
+        font-size: 4.5vw;
     }
     .bottom-mid-row{
         text-align: center;
@@ -127,10 +137,13 @@
         flex-direction: column;
     }
     .pick-text{
-        font-size: 1.5rem;
+        font-size: 3vw;
     }
     .bets-text{
-        font-size: 1.2rem;
+        font-size: 2.8vw;
+    }
+    .scarcity-text{
+        font-size: 2.4vw;
     }
     /* Bottom left */
     .img-col{
@@ -142,6 +155,36 @@
     .btn-col{
         order: 3;
         width: 50%;
+    }
+    #btn{
+        font-size: 3vw;
+    }
+    .trusted-text{
+        font-size: 2vw;
+    }
+}
 
+@media only screen and (max-width: 420px){
+    .timer-letters {
+        font-size: 2.5vw;
+    }
+    .timer-numbers {
+        font-size: 6vw;
+    }
+    .pick-text{
+        font-size: 5vw;
+    }
+    .bets-text{
+        font-size: 4vw;
+    }
+    .scarcity-text{
+        font-size: 3.8vw;
+    }
+    /* Bottom right */
+    #btn{
+        font-size: 4vw;
+    }
+    .trusted-text{
+        font-size: 3.5vw;
     }
 }
