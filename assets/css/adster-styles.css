@@ -105,10 +105,16 @@
 }
 @media only screen and (min-width: 925px){
     .timer-letters {
-        font-size: 1vw;
+        font-size: .8vw;
     }
     .timer-numbers{
         font-size: 2vw;
+    }
+    .pick-text{
+        font-size: 1.8vw;
+    }
+    .bets-text{
+        font-size: 1.5vw;
     }
 }
 @media only screen and (max-width: 640px){
