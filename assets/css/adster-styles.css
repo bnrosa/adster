@@ -1,0 +1,147 @@
+/* Left */
+#row{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Roboto', sans-serif;
+    max-width: 650px;
+    max-height: 135px;
+}
+.row img{
+    height: max-content;
+}
+.img-col{
+    width: 25%;
+}
+
+/* Middle */
+.mid-col{
+    width:50%;
+    padding: 1rem;
+    background-color: #000105;
+    grid-auto-rows: 1fr;
+    display: grid;
+    padding: 0.5rem;
+    color: #fff;
+}
+.top-mid-row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.timer-row{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+.timer-box{
+    background-color: red;
+    margin: 2px;
+    width: 45px;
+    font-weight: bold;
+    text-align: center;
+    height: 45px;
+    line-height: 0.9;
+}
+.timer-letters{
+    font-size: 1rem;
+}
+.timer-numbers{
+    font-size: 2rem;
+}
+
+.scarcity-text{
+    text-align: left;
+    font-size: 1.2rem;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0.8;
+    padding-left: 2rem;
+    font-weight: bold;
+}
+.bottom-mid-row{
+   line-height: 1;
+}
+.pick-text{
+    color: #FFEF16;  
+    font-size: 2rem;
+    font-weight: bold; 
+}
+.bets-text{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+/* Right */
+.btn-col{
+    width:25%;
+    background-color: #1A1A1A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#btn{
+    color: #000;
+    background-image: linear-gradient(to top, #ff4208 0%, #FF8008 4%, #ffa908 100%, #feb517 100%);
+    border-radius: 2px;
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.trusted-text{
+    line-height: 1;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10px;
+}
+#btn:hover{
+    text-decoration: none;
+
+}
+
+@media only screen and (max-width: 640px){
+    #row{
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 650px;
+        max-height: 240px;
+    }
+    /* Top */
+    .mid-col{
+        order: 1;
+        width: 100%;
+    }
+    .timer-letters {
+        font-size: 0.9rem;
+    }
+    .bottom-mid-row{
+        text-align: center;
+        line-height: 0.5;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .pick-text{
+        font-size: 1.5rem;
+    }
+    .bets-text{
+        font-size: 1.2rem;
+    }
+    /* Bottom left */
+    .img-col{
+        order: 2;
+        width: 50%;
+        background-color: #1A1A1A;
+    }
+    /* Bottom right */
+    .btn-col{
+        order: 3;
+        width: 50%;
+
+    }
+}
