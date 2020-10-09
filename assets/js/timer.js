@@ -2,11 +2,8 @@
 if(document.getElementById('adsterCountdown') != null){
     var x = setInterval(function() {
         var countDown = document.getElementById('adsterCountdown').innerHTML * 1000;
-        console.log(countDown);
         var now = (new Date().getTime());
-        console.log(now);
         var distance = countDown - now;
-        console.log(distance);
         if(distance > 0){
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
